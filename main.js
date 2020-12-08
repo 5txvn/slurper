@@ -34,7 +34,12 @@ var memeimg = [{files: ["./memeimgs/testmeme.jpg"]}, {files: ["./memeimgs/dmeme1
 {files: ["./memeimgs/dmeme21.jpg"]}, {files: ["./memeimgs/dmeme22.jpg"]}, {files: ["./memeimgs/dmeme23.jpg"]}, {files: ["./memeimgs/dmeme24.jpg"]}, {files: ["./memeimgs/dmeme25.jpg"]}, 
 {files: ["./memeimgs/dmeme26.jpg"]}, {files: ["./memeimgs/dmeme27.jpg"]}, {files: ["./memeimgs/dmeme28.jpg"]}, {files: ["./memeimgs/dmeme29.jpg"]}, {files: ["./memeimgs/dmeme30.jpg"]}];
 
-var nums = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10, 11, 13, 15, 17, 19, 12, 14, 16, 18, 20, 21, 23, 25, 27, 29, 22, 24, 26, 28, 30]
+var nums = [Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), 
+    Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), 
+    Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), 
+    Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), 
+    Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), 
+    Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30), Math.floor(Math.random()*30)]
 
 //yt commands
 if (command === 'ytchannel'){
