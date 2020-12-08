@@ -29,7 +29,12 @@ const command = args.shift().toLowerCase();
 
 var m = 60;
 
-var memeimg = [];
+var memeimg = [{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme2.jpg"]}, {files: ["./memeimgs/dmeme3.jpg"]}, {files: ["./memeimgs/dmeme4.jpg"]}, {files: ["./memeimgs/dmeme5.jpg"]}, {files: ["./memeimgs/dmeme6.jpg"]}, {files: ["./memeimgs/dmeme7.jpg"]}, {files: ["./memeimgs/dmeme8.jpg"]}, {files: ["./memeimgs/dmeme9.jpg"]}, {files: ["./memeimgs/dmeme10.jpg"]}, 
+{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, 
+{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, 
+{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, 
+{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, 
+{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}];
 
 for(let i = 0; i < 61; i++){
     memeimg.push({files: ["./memeimgs/dmeme' + i + '.jpg"]});
@@ -68,6 +73,9 @@ else if (command === "meme"){
     message.channel.send(memeimg[nums[Math.floor(Math.random() * 30)]]);
 }
 //chat back
+
+var level = 0
+
 else if (command === "emergency"){
     message.channel.send("Oh no! What's going on?")
 } else if (command === "ur.dumb"){
@@ -80,6 +88,10 @@ else if (command === "emergency"){
     message.channel.send("What?")
 } else if (command === "steven"){
     message.channel.send("That's my dad!")
+} else if (command === "1up"){
+    level++;
+} else if (command === "level"){
+    message.channel.send(level);
 }
 //else
 else {
