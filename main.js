@@ -47,6 +47,8 @@ else if (command === "emergency"){
     message.channel.send("Son?")
 } else if (command === "test"){
     message.channel.send("What are you trying to test?")
+} else if (command === "bruh"){
+    message.channel.send("What?")
 }
 //else
 else {
