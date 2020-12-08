@@ -34,6 +34,8 @@ var memeimg = [{files: ["./memeimgs/testmeme.jpg"]}, {files: ["./memeimgs/dmeme1
 {files: ["./memeimgs/dmeme21.jpg"]}, {files: ["./memeimgs/dmeme22.jpg"]}, {files: ["./memeimgs/dmeme23.jpg"]}, {files: ["./memeimgs/dmeme24.jpg"]}, {files: ["./memeimgs/dmeme25.jpg"]}, 
 {files: ["./memeimgs/dmeme26.jpg"]}, {files: ["./memeimgs/dmeme27.jpg"]}, {files: ["./memeimgs/dmeme28.jpg"]}, {files: ["./memeimgs/dmeme29.jpg"]}, {files: ["./memeimgs/dmeme30.jpg"]}];
 
+var nums = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10, 11, 13, 15, 17, 19, 12, 14, 16, 18, 20, 21, 23, 25, 27, 29, 22, 24, 26, 28, 30]
+
 //yt commands
 if (command === 'ytchannel'){
     message.channel.send('visit our channel at https://www.youtube.com/channel/UCVERAawj2plnbbtV56fhXnQ/videos!');
@@ -58,7 +60,7 @@ else if (command === 'num.1-10'){
 } 
 //meme commands
 else if (command === "meme"){
-    message.channel.send(memeimg[Math.floor(Math.random() * 30)]);
+    message.channel.send(memeimg[nums[Math.floor(Math.random() * 30)]]);
 }
 //chat back
 else if (command === "emergency"){
