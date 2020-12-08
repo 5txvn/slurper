@@ -73,9 +73,6 @@ else if (command === "meme"){
     message.channel.send(memeimg[nums[Math.floor(Math.random() * 30)]]);
 }
 //chat back
-
-var level = 0
-
 else if (command === "emergency"){
     message.channel.send("Oh no! What's going on?")
 } else if (command === "ur.dumb"){
@@ -88,10 +85,6 @@ else if (command === "emergency"){
     message.channel.send("What?")
 } else if (command === "steven"){
     message.channel.send("That's my dad!")
-} else if (command === "1up"){
-    level++;
-} else if (command === "level"){
-    message.channel.send(level);
 } else if (command === "beg"){
     setInterval(function(){message.channel.send("pls beg")}, 60000);
 }
