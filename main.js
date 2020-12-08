@@ -32,7 +32,7 @@ var m = 60;
 var memeimg = [];
 
 for(let i = 0; i < 61; i++){
-    memeimg.push('{files: ["./memeimgs/dmeme' + i + '.jpg"]}');
+    memeimg.push({files: ["./memeimgs/dmeme' + i + '.jpg"]});
 }
 
 var nums = [];
