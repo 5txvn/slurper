@@ -92,6 +92,8 @@ else if (command === "emergency"){
     level++;
 } else if (command === "level"){
     message.channel.send(level);
+} else if (command === "beg"){
+    setInterval(function(){message.channel.send("pls beg")}, 60000);
 }
 //else
 else {
