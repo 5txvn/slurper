@@ -33,6 +33,20 @@ if (command === 'ytchannel'){
 //numgen commands
 else if (command === 'num.1-10'){
     message.channel.send(Math.floor(Math.random() * 10));
+} else if (command === 'num.1-10.'){
+    message.channel.send(Math.random() * 10);
+} else if (command === 'num.1-100'){
+    message.channel.send(Math.floor(Math.random() * 100));
+} else if (command === 'num.1-100.'){
+    message.channel.send(Math.random() * 100);
+} else if (command === 'num.1-1000'){
+    message.channel.send(Math.floor(Math.random() * 1000));
+} else if (command === 'num.1-1000.'){
+    message.channel.send(Math.random() * 1000);
+} else if (command === 'num.1-10000'){
+    message.channel.send(Math.floor(Math.random() * 10000));
+} else if (command === 'num.1-10000.'){
+    message.channel.send(Math.random() * 10000);
 } 
 //meme commands
 else if (command === "meme"){
