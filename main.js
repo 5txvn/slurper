@@ -1,3 +1,4 @@
+const { clear } = require('console');
 const Discord = require('discord.js');
 
 const client = new Discord.Client();
@@ -84,6 +85,9 @@ else if (command === "emergency"){
     message.channel.send("What?")
 } else if (command === "steven"){
     message.channel.send("That's my dad!")
+} else if (command === "clear.interval"){
+    clearInterval();
+    message.channel.send("Interval was cleared")
 }
 //else
 else {
