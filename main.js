@@ -84,14 +84,13 @@ else if (command === "emergency"){
     message.channel.send("What?")
 } else if (command === "steven"){
     message.channel.send("That's my dad!")
-} else if (command === "beg"){
-    setInterval(function(){message.channel.send("pls beg")}, 60000);
 }
 //else
 else {
     message.channel.send(command);
 }
 });
+clearInterval();
 
 //commit placehold
 
