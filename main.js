@@ -1,101 +1,72 @@
-const { clear } = require('console');
 const Discord = require('discord.js');
-
 const client = new Discord.Client();
+require("dotenv").config()
 
-const prefix = "slurp ";
-
-const fs = require('fs');
-
-client.commands = new Discord.Collection();
-
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith(',js'));
-for(const file of commandFiles){
-    const command = require(`./commands/${file}`);
-
-    client.commands.set(command.name, command);
-}
+const prefix = "!! ";
 
 client.once('ready', () => {
     console.log("Stevano's bot is now online");
 });
 
-client.on('message', message =>{
-if (!message.content.startsWith(prefix) || message.author.bot) return;
-const args = message.content.slice(prefix.length).split(/ +/);
-const command = args.shift().toLowerCase();
+client.on('message', message => {
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
+    const args = message.content.slice(prefix.length).split(" ");
+    const command = args[0].toLowerCase();
 
-//memes
+    let res = ""
+    switch (command) {
+        case "num":
+            const usage_info = "Usage: " + prefix + "num min-max"
 
-var m = 60;
+            if (!args[1]) return message.channel.send(usage_info)
 
-var memeimg = [{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme2.jpg"]}, {files: ["./memeimgs/dmeme3.jpg"]}, {files: ["./memeimgs/dmeme4.jpg"]}, {files: ["./memeimgs/dmeme5.jpg"]}, {files: ["./memeimgs/dmeme6.jpg"]}, {files: ["./memeimgs/dmeme7.jpg"]}, {files: ["./memeimgs/dmeme8.jpg"]}, {files: ["./memeimgs/dmeme9.jpg"]}, {files: ["./memeimgs/dmeme10.jpg"]}, 
-{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, 
-{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, 
-{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, 
-{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, 
-{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}];
+            const nums = args[1].split("-");
+            // Makes sure 2 - seperated values were given
+            if (nums.length != 2) return message.channel.send(usage_info)
 
-for(let i = 0; i < 61; i++){
-    memeimg.push({files: ["./memeimgs/dmeme' + i + '.jpg"]});
-}
+            const min = parseInt(nums[0]);
+            const max = parseInt(nums[1]);
 
-var nums = [];
+            // Makes sure both where numbers
+            if (isNaN(min) || isNaN(max)) return message.channel.send(usage_info)
+            // Makes sure min isnt more than max
+            if (min >= max) return message.channel.send(usage_info)
 
-for(let i = 0; i < 61; i++){
-    nums.push(Math.floor(Math.random()*m));
-}
+            // Generates random value in range min-max, found from example in https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+            res = Math.floor(Math.random() * (max - min) + min);
+            break;
 
-//yt commands
-if (command === 'ytchannel'){
-    message.channel.send('visit our channel at https://www.youtube.com/channel/UCVERAawj2plnbbtV56fhXnQ/videos!');
-}
-//numgen commands
-else if (command === 'num.1-10'){
-    message.channel.send(Math.floor(Math.random() * 10));
-} else if (command === 'num.1-10.'){
-    message.channel.send(Math.random() * 10);
-} else if (command === 'num.1-100'){
-    message.channel.send(Math.floor(Math.random() * 100));
-} else if (command === 'num.1-100.'){
-    message.channel.send(Math.random() * 100);
-} else if (command === 'num.1-1000'){
-    message.channel.send(Math.floor(Math.random() * 1000));
-} else if (command === 'num.1-1000.'){
-    message.channel.send(Math.random() * 1000);
-} else if (command === 'num.1-10000'){
-    message.channel.send(Math.floor(Math.random() * 10000));
-} else if (command === 'num.1-10000.'){
-    message.channel.send(Math.random() * 10000);
-} 
-//meme commands
-else if (command === "meme"){
-    message.channel.send(memeimg[nums[Math.floor(Math.random() * 30)]]);
-}
-//chat back
-else if (command === "emergency"){
-    message.channel.send("Oh no! What's going on?")
-} else if (command === "ur.dumb"){
-    message.channel.send("No u")
-} else if (command === "daddy"){
-    message.channel.send("Son?")
-} else if (command === "test"){
-    message.channel.send("What are you trying to test?")
-} else if (command === "bruh"){
-    message.channel.send("What?")
-} else if (command === "steven"){
-    message.channel.send("That's my dad!")
-} else if (command === "clear.interval"){
-    clearInterval();
-    message.channel.send("Interval was cleared")
-}
-//else
-else {
-    message.channel.send(command);
-}
+        case "meme":
+            const MEME_COUNT = 60;
+            const files = ["./memeimgs/dmeme" + Math.floor(Math.random() * MEME_COUNT) + ".jpg"]
+            res = { files };
+            break;
+        case "emergency":
+            res = "Oh no! What's going on?";
+            break;
+        case "urdumb":
+            res = "No u";
+            break;
+        case "daddy":
+            res = "Son?";
+            break;
+        case "test":
+            res = "What are you trying to test?";
+            break;
+        case "bruh":
+            res = "What?";
+            break;
+        case "steven":
+            res = "That's my dad!";
+            break;
+        case "beg":
+            setInterval(function () { message.channel.send("pls beg") }, 60000);
+            break;
+        default:
+            res = command;
+    }
+    message.channel.send(res);
 });
-clearInterval();
 
 //commit placehold
-
-client.login(process.env.token);
+client.login(process.env.TOKEN);
