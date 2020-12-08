@@ -24,12 +24,20 @@ client.on('message', message =>{
 if (!message.content.startsWith(prefix) || message.author.bot) return;
 const args = message.content.slice(prefix.length).split(/ +/);
 const command = args.shift().toLowerCase();
+
+//memes
+
+var memeimg = [{files: ["./memeimgs/testmeme.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme2.jpg"]}, {files: ["./memeimgs/dmeme3.jpg"]}, {files: ["./memeimgs/dmeme4.jpg"]},
+{files: ["./memeimgs/dmeme5.jpg"]}, {files: ["./memeimgs/dmeme6.jpg"]}, {files: ["./memeimgs/dmeme7.jpg"]}, {files: ["./memeimgs/dmeme8.jpg"]}, {files: ["./memeimgs/dmeme9.jpg"]}, {files: ["./memeimgs/dmeme10.jpg"]}, 
+{files: ["./memeimgs/dmeme11.jpg"]}, {files: ["./memeimgs/dmeme12.jpg"]}, {files: ["./memeimgs/dmeme13.jpg"]}, {files: ["./memeimgs/dmeme14.jpg"]}, {files: ["./memeimgs/dmeme15.jpg"]}, 
+{files: ["./memeimgs/dmeme16.jpg"]}, {files: ["./memeimgs/dmeme17.jpg"]}, {files: ["./memeimgs/dmeme18.jpg"]}, {files: ["./memeimgs/dmeme19.jpg"]}, {files: ["./memeimgs/dmeme20.jpg"]}, 
+{files: ["./memeimgs/dmeme21.jpg"]}, {files: ["./memeimgs/dmeme22.jpg"]}, {files: ["./memeimgs/dmeme23.jpg"]}, {files: ["./memeimgs/dmeme24.jpg"]}, {files: ["./memeimgs/dmeme25.jpg"]}, 
+{files: ["./memeimgs/dmeme26.jpg"]}, {files: ["./memeimgs/dmeme27.jpg"]}, {files: ["./memeimgs/dmeme28.jpg"]}, {files: ["./memeimgs/dmeme29.jpg"]}, {files: ["./memeimgs/dmeme30.jpg"]}];
+
 //yt commands
 if (command === 'ytchannel'){
     message.channel.send('visit our channel at https://www.youtube.com/channel/UCVERAawj2plnbbtV56fhXnQ/videos!');
-} else if (command === 'holiday'){
-    message.channel.send('https://www.youtube.com/watch?v=9vMLTcftlyI')
-} 
+}
 //numgen commands
 else if (command === 'num.1-10'){
     message.channel.send(Math.floor(Math.random() * 10));
@@ -50,7 +58,7 @@ else if (command === 'num.1-10'){
 } 
 //meme commands
 else if (command === "meme"){
-    client.commands.get('memes').execute(message, args);
+    message.channel.send(memeimg[Math.floor(Math.random() * 30)]);
 }
 //chat back
 else if (command === "emergency"){
