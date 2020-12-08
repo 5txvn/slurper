@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 require("dotenv").config()
 
-const prefix = "!! ";
+const prefix = "execute";
 
 client.once('ready', () => {
     console.log("Stevano's bot is now online");
