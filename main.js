@@ -78,6 +78,8 @@ else if (command === "emergency"){
     message.channel.send("What are you trying to test?")
 } else if (command === "bruh"){
     message.channel.send("What?")
+} else if (command === "steven"){
+    message.channel.send("That's my dad!")
 }
 //else
 else {
