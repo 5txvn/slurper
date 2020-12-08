@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-require("dotenv").config()
 
 const prefix = "execute";
 
@@ -69,4 +68,4 @@ client.on('message', message => {
 });
 
 //commit placehold
-client.login(process.env.TOKEN);
+client.login(process.env.token);
