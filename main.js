@@ -1,6 +1,8 @@
 const { clear } = require('console');
 const Discord = require('discord.js');
+
 require("dotenv").config();
+
 const client = new Discord.Client();
 
 const prefix = "execute ";
