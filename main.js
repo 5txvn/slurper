@@ -26,7 +26,7 @@ for(const file of commandFiles){
 }
 
 client.once('ready', () => {
-    console.log("Stevano's bot is now online");
+    console.log({files: memefiles});
 });
 
 client.on('message', message =>{
