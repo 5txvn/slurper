@@ -68,9 +68,9 @@ else if (command === 'num.1-10'){
 } 
 //meme commands
 else if (command === "meme"){
-    message.channel.send({memefiles});
+    message.channel.send({files: memefiles});
 } else if (command === "funny"){
-    message.channel.send({funnyfiles});
+    message.channel.send({files: funnyfiles});
 }
 //chat back
 else if (command === "emergency"){
