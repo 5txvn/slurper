@@ -87,6 +87,6 @@ else {
 });
 clearInterval();
 
-//commit placehold
+//commit placeholder
 
 client.login(process.env.token);
