@@ -42,7 +42,7 @@ const memefiles = ["./memeimgs/dmeme" + Math.floor(Math.random() * memecount) + 
 
 var funnycount = 10;
 
-const funnyfiles = ["./memeimgs/dfunny" + Math.floor(Math.random() * memecount) + ".jpg"]
+const funnyfiles = ["./funny/dfunny" + Math.floor(Math.random() * funnycount) + ".jpg"]
 
 //yt commands
 if (command === 'ytchannel'){
@@ -68,9 +68,9 @@ else if (command === 'num.1-10'){
 } 
 //meme commands
 else if (command === "meme"){
-    message.channel.send({ memefiles });
+    message.channel.send({memefiles});
 } else if (command === "funny"){
-    message.channel.send({ funnyfiles });
+    message.channel.send({funnyfiles});
 }
 //chat back
 else if (command === "emergency"){
