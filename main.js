@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 require("dotenv").config();
 const client = new Discord.Client();
 
-const prefix = "slurp ";
+const prefix = "execute ";
 
 const fs = require('fs');
 
@@ -27,23 +27,13 @@ const command = args.shift().toLowerCase();
 
 //memes
 
-var m = 60;
+var memecount = 60;
 
-var memeimg = [{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme2.jpg"]}, {files: ["./memeimgs/dmeme3.jpg"]}, {files: ["./memeimgs/dmeme4.jpg"]}, {files: ["./memeimgs/dmeme5.jpg"]}, {files: ["./memeimgs/dmeme6.jpg"]}, {files: ["./memeimgs/dmeme7.jpg"]}, {files: ["./memeimgs/dmeme8.jpg"]}, {files: ["./memeimgs/dmeme9.jpg"]}, {files: ["./memeimgs/dmeme10.jpg"]}, 
-{files: ["./memeimgs/dmeme11.jpg"]}, {files: ["./memeimgs/dmeme12.jpg"]}, {files: ["./memeimgs/dmeme13.jpg"]}, {files: ["./memeimgs/dmeme14.jpg"]}, {files: ["./memeimgs/dmeme15.jpg"]}, {files: ["./memeimgs/dmeme16.jpg"]}, {files: ["./memeimgs/dmeme17.jpg"]}, {files: ["./memeimgs/dmeme18.jpg"]}, {files: ["./memeimgs/dmeme19.jpg"]}, {files: ["./memeimgs/dmeme20.jpg"]}, 
-{files: ["./memeimgs/dmeme21.jpg"]}, {files: ["./memeimgs/dmeme22.jpg"]}, {files: ["./memeimgs/dmeme23.jpg"]}, {files: ["./memeimgs/dmeme24.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, 
-{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, 
-{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, 
-{files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}, {files: ["./memeimgs/dmeme1.jpg"]}];
+const memefiles = ["./memeimgs/dmeme" + Math.floor(Math.random() * memecount) + ".jpg"]
 
+var funnycount = 10;
 
-var nums = [];
-
-for(let i = 0; i < 61; i++){
-    nums.push(Math.floor(Math.random()*m));
-}
-
-const files = ["./memeimgs/dmeme" + Math.floor(Math.random() * m) + ".jpg"]
+const funnyfiles = ["./memeimgs/dfunny" + Math.floor(Math.random() * memecount) + ".jpg"]
 
 //yt commands
 if (command === 'ytchannel'){
@@ -69,7 +59,9 @@ else if (command === 'num.1-10'){
 } 
 //meme commands
 else if (command === "meme"){
-    message.channel.send({ files });
+    message.channel.send({ memefiles });
+} else if (command === "funny"){
+    message.channel.send({ funnyfiles });
 }
 //chat back
 else if (command === "emergency"){
