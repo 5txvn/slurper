@@ -36,7 +36,7 @@ const command = args.shift().toLowerCase();
 
 //memes
 
-var memecount = 60;
+var memecount = 90;
 
 const memefiles = ["./memeimgs/dmeme" + Math.floor(Math.random() * memecount) + ".jpg"]
 
