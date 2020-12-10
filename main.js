@@ -34,6 +34,10 @@ if (!message.content.startsWith(prefix) || message.author.bot) return;
 const args = message.content.slice(prefix.length).split(/ +/);
 const command = args.shift().toLowerCase();
 
+//level
+
+var level = 0;
+
 //memes
 
 var memecount = 90;
@@ -88,6 +92,10 @@ else if (command === "emergency"){
 } else if (command === "clear.interval"){
     clearInterval();
     message.channel.send("Interval was cleared")
+} else if (command === "1up"){
+    level++;
+} else if (command === "level"){
+    message.channel.send(level);
 }
 //else
 else {
