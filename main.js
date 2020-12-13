@@ -75,6 +75,8 @@ else if (command === "meme"){
     message.channel.send({files: memefiles});
 } else if (command === "funny"){
     message.channel.send({files: funnyfiles});
+} else if (command === "memes"){
+    client.commands.get('memes').execute(message, args)
 }
 //chat back
 else if (command === "emergency"){
