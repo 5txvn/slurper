@@ -71,9 +71,7 @@ else if (command === 'num.1-10'){
     message.channel.send(Math.random() * 10000);
 } 
 //meme commands
-else if (command === "meme"){
-    message.channel.send({files: memefiles});
-} else if (command === "funny"){
+else if (command === "funny"){
     message.channel.send({files: funnyfiles});
 } else if (command === "memes"){
     client.commands.get('memes').execute(message, args)
