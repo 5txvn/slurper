@@ -43,14 +43,6 @@ var level = 0;
 
 //memes
 
-var memecount = 90;
-
-const memefiles = ["./memeimgs/dmeme" + Math.floor(Math.random() * memecount) + ".jpg"]
-
-var funnycount = 10;
-
-const funnyfiles = ["./funny/dfunny" + Math.floor(Math.random() * funnycount) + ".jpg"]
-
 //yt commands
 if (command === 'ytchannel'){
     message.channel.send('visit our channel at https://www.youtube.com/channel/UCVERAawj2plnbbtV56fhXnQ/videos!');
@@ -74,9 +66,7 @@ else if (command === 'num.1-10'){
     message.channel.send(Math.random() * 10000);
 } 
 //meme commands
-else if (command === "funny"){
-    message.channel.send({files: funnyfiles});
-} else if (command === "meme") {
+else if (command === "meme") {
     const embed = new Discord.MessageEmbed()
     got('https://www.reddit.com/r/memes/random/.json').then(response => {
         let content = JSON.parse(response.body);
