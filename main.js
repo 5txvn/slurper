@@ -27,7 +27,7 @@ for(const file of commandFiles){
 }
 
 client.once('ready', () => {
-    console.log({files: memefiles});
+    console.log("Slurper is now online!");
 });
 
 client.on('message', message =>{
