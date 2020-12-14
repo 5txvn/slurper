@@ -76,7 +76,7 @@ else if (command === 'num.1-10'){
 //meme commands
 else if (command === "funny"){
     message.channel.send({files: funnyfiles});
-} else if (message.content === "?meme") {
+} else if (command === "meme") {
     const embed = new Discord.MessageEmbed()
     got('https://www.reddit.com/r/memes/random/.json').then(response => {
         let content = JSON.parse(response.body);
