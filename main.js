@@ -88,23 +88,7 @@ else if (command === "emergency"){
 }
 //reddit meme commands
 else if (command === "meme") {
-    const embed = new Discord.MessageEmbed()
-    got('https://www.reddit.com/r/memes/random/.json').then(response => {
-        let content = JSON.parse(response.body);
-        let permalink = content[0].data.children[0].data.permalink;
-        let memeUrl = `https://reddit.com${permalink}`;
-        let memeImage = content[0].data.children[0].data.url;
-        let memeTitle = content[0].data.children[0].data.title;
-        let memeUpvotes = content[0].data.children[0].data.ups;
-        let memeDownvotes = content[0].data.children[0].data.downs;
-        let memeNumComments = content[0].data.children[0].data.num_comments;
-        embed.setTitle(`${memeTitle}`)
-        embed.setURL(`${memeUrl}`)
-        embed.setImage(memeImage)
-        embed.setColor('RANDOM')
-        embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
-        message.channel.send(embed);
-    })
+    client.commands.get('meme').execute(message, args);
 } else if (command === "funny") {
     const embed = new Discord.MessageEmbed()
     got('https://www.reddit.com/r/funny/random/.json').then(response => {
@@ -141,43 +125,7 @@ else if (command === "meme") {
         embed.setFooter(`👍 ${muricamemeUpvotes} 👎 ${muricamemeDownvotes} 💬 ${muricamemeNumComments}`)
         message.channel.send(embed);
     })
-} else if (command === "adviceanimals") {
-    const embed = new Discord.MessageEmbed()
-    got('https://www.reddit.com/r/memes/random/.json').then(response => {
-        let adviceanimalscontent = JSON.parse(response.body);
-        let adviceanimalspermalink = content[0].data.children[0].data.permalink;
-        let adviceanimalsmemeUrl = `https://reddit.com${permalink}`;
-        let adviceanimalsmemeImage = content[0].data.children[0].data.url;
-        let adviceanimalsmemeTitle = content[0].data.children[0].data.title;
-        let adviceanimalsmemeUpvotes = content[0].data.children[0].data.ups;
-        let adviceanimalsmemeDownvotes = content[0].data.children[0].data.downs;
-        let adviceanimalsmemeNumComments = content[0].data.children[0].data.num_comments;
-        embed.setTitle(`${adviceanimalsmemeTitle}`)
-        embed.setURL(`${adviceanimalsmemeUrl}`)
-        embed.setImage(adviceanimalsmemeImage)
-        embed.setColor('RANDOM')
-        embed.setFooter(`👍 ${adviceanimalsmemeUpvotes} 👎 ${adviceanimalsmemeDownvotes} 💬 ${adviceanimalsmemeNumComments}`)
-        message.channel.send(embed);
-    })
-} else if (command === "jokes") {
-    const embed = new Discord.MessageEmbed()
-    got('https://www.reddit.com/r/memes/random/.json').then(response => {
-        let jokescontent = JSON.parse(response.body);
-        let jokespermalink = content[0].data.children[0].data.permalink;
-        let jokesmemeUrl = `https://reddit.com${permalink}`;
-        let jokesmemeImage = content[0].data.children[0].data.url;
-        let jokesmemeTitle = content[0].data.children[0].data.title;
-        let jokesmemeUpvotes = content[0].data.children[0].data.ups;
-        let jokesmemeDownvotes = content[0].data.children[0].data.downs;
-        let jokesmemeNumComments = content[0].data.children[0].data.num_comments;
-        embed.setTitle(`${jokesmemeTitle}`)
-        embed.setURL(`${jokesmemeUrl}`)
-        embed.setImage(jokesmemeImage)
-        embed.setColor('RANDOM')
-        embed.setFooter(`👍 ${jokesmemeUpvotes} 👎 ${jokesmemeDownvotes} 💬 ${jokesmemeNumComments}`)
-        message.channel.send(embed);
-    })
-}
+} 
 //else
 else {
     message.channel.send(command);
