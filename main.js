@@ -90,23 +90,7 @@ else if (command === "emergency"){
 else if (command === "meme") {
     client.commands.get('meme').execute(message, args);
 } else if (command === "funny") {
-    const embed = new Discord.MessageEmbed()
-    got('https://www.reddit.com/r/funny/random/.json').then(response => {
-        let funnycontent = JSON.parse(response.body);
-        let funnypermalink = content[0].data.children[0].data.permalink;
-        let funnymemeUrl = `https://reddit.com${permalink}`;
-        let funnymemeImage = content[0].data.children[0].data.url;
-        let funnymemeTitle = content[0].data.children[0].data.title;
-        let funnymemeUpvotes = content[0].data.children[0].data.ups;
-        let funnymemeDownvotes = content[0].data.children[0].data.downs;
-        let funnymemeNumComments = content[0].data.children[0].data.num_comments;
-        embed.setTitle(`${funnymemeTitle}`)
-        embed.setURL(`${funnymemeUrl}`)
-        embed.setImage(funnymemeImage)
-        embed.setColor('RANDOM')
-        embed.setFooter(`👍 ${funnymemeUpvotes} 👎 ${funnymemeDownvotes} 💬 ${funnymemeNumComments}`)
-        message.channel.send(embed);
-    })
+    client.commands.get('funny').execute(message, args);
 } else if (command === "murica") {
     const embed = new Discord.MessageEmbed()
     got('https://www.reddit.com/r/MURICA/random/.json').then(response => {
